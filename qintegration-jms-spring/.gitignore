@@ -6,5 +6,7 @@
 *.war
 *.ear
 
-target/*
+/target
+
 .settings/*
+
