@@ -10,6 +10,7 @@
 	<modules>
 		<module>qintegration-jms-simple</module>
 		<module>qintegration-jms-spring</module>
+		<module>qintegration-jms-spring3</module>
 	</modules>
 	<properties>
 		<java-version>1.7</java-version>

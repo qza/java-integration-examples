@@ -11,19 +11,17 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Runner {
 
 	final Sender sender;
-	final Receiver receiver;
-
 	final ApplicationContext context;
 	final Logger log = LoggerFactory.getLogger(Runner.class);
 
 	public Runner() {
 		context = new ClassPathXmlApplicationContext("jms-context.xml");
 		sender = context.getBean(Sender.class);
-		receiver = context.getBean(Receiver.class);
 	}
 
 	public void run() {
 		sender.send();
+		log.info("message sent.");
 		zzz(1000);
 	}
 
