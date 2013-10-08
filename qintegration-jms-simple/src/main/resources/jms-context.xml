@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                      http://www.springframework.org/schema/context
+                      http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <!-- enable scanning for @Component -->
+    <context:component-scan base-package="org.qza.integration"/>
+    
+    <context:property-placeholder location="jms.properties"/>
+
+    <!-- JMS Configuration -->
+    <bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="brokerURL" value="${broker_url}"/>
+    </bean>
+    
+    <bean id="broker" class="org.qza.integration.simple.Broker">
+    	<constructor-arg ref="connectionFactory"/>
+    	<constructor-arg value="${destination_name}"/>
+    </bean>
+    
+    <bean id="consumer" class="org.qza.integration.simple.Consumer">
+    	<constructor-arg ref="broker"/>
+    </bean>
+    
+    <bean id="producer" class="org.qza.integration.simple.Producer">
+    	<constructor-arg ref="broker"/>
+    </bean>
+    
+</beans>
