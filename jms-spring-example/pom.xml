@@ -1,30 +1,39 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
 	<modelVersion>4.0.0</modelVersion>
+
 	<parent>
 		<groupId>org.qza</groupId>
-		<artifactId>qintegration</artifactId>
+		<artifactId>integration-examples</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>qintegration-jms-spring</artifactId>
-	<name>qintegration-jms-spring</name>
-	<description>qintegration-jms-spring</description>
+
+	<artifactId>jms-spring-example</artifactId>
+	<name>jms-spring-example</name>
+	<description>Sending files from folder over AMQ to receiver</description>
+
 	<properties>
 		<activemq-client_version>5.8.0</activemq-client_version>
 		<spring-jms_version>3.2.0.RELEASE</spring-jms_version>
 	</properties>
+
 	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jms</artifactId>
+			<version>${spring-jms_version}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.apache.activemq</groupId>
 			<artifactId>activemq-client</artifactId>
 			<version>${activemq-client_version}</version>
 		</dependency>
-		<dependency>
-             <groupId>org.springframework</groupId>
-             <artifactId>spring-jms</artifactId>
-             <version>${spring-jms_version}</version>
-        </dependency>
+
 	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -42,4 +51,5 @@
 			</plugin>
 		</plugins>
 	</build>
+
 </project>

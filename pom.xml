@@ -1,33 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.qza</groupId>
-	<artifactId>qintegration</artifactId>
+	<artifactId>integration-examples</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>qintegration</name>
-	<description>Java Integration Projects</description>
+	<name>integration-examples</name>
+	<description>Java Integration Examples</description>
+
 	<modules>
-		<module>qintegration-jms-simple</module>
-		<module>qintegration-jms-spring</module>
-		<module>qintegration-jms-spring3</module>
-		<module>qintegration-jms-camel-spring</module>
-    <module>qintegration-karaf-camel-spring</module>
-  </modules>
+		<module>jms-simple-example</module>
+		<module>jms-spring-example</module>
+		<module>jms-spring3-example</module>
+		<module>jms-camel-spring-example</module>
+	</modules>
+
 	<properties>
-		<java-version>1.7</java-version>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<org.springframework.version>3.2.2.RELEASE</org.springframework.version>
 		<log4j.version>1.2.17</log4j.version>
 		<org.slf4j.version>1.6.1</org.slf4j.version>
 		<junit.version>4.8.2</junit.version>
 	</properties>
+
 	<dependencies>
+
+		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${org.springframework.version}</version>
 		</dependency>
+
+		<!-- Logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -50,6 +59,7 @@
 			<scope>runtime</scope>
 			<version>${log4j.version}</version>
 		</dependency>
+
 		<!-- Testing -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -63,5 +73,23 @@
 			<version>${org.springframework.version}</version>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
+	
+	<build>
+	
+		<plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+	
+	</build>
 </project>

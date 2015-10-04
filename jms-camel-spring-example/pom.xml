@@ -1,19 +1,26 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
 	<modelVersion>4.0.0</modelVersion>
+
 	<parent>
 		<groupId>org.qza</groupId>
-		<artifactId>qintegration</artifactId>
+		<artifactId>integration-examples</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>qintegration-jms-camel-spring</artifactId>
-	<name>qintegration-jms-camel-spring</name>
-	<description>Integration project as Karaf bundle with jms, activeMq, camel and spring</description>
+
+	<artifactId>jms-camel-spring-example</artifactId>
+	<name>jms-camel-spring-example</name>
+	<description>Sending files from folder over AMQ to receiver</description>
+
 	<properties>
 		<activemq-client_version>5.8.0</activemq-client_version>
 		<camel-version>2.12.0</camel-version>
 	</properties>
+
 	<dependencies>
+
+		<!-- Camel -->
 		<dependency>
 			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-core</artifactId>
@@ -29,12 +36,15 @@
 			<artifactId>camel-jms</artifactId>
 			<version>${camel-version}</version>
 		</dependency>
+
+		<!-- AMQ Client -->
 		<dependency>
 			<groupId>org.apache.activemq</groupId>
 			<artifactId>activemq-client</artifactId>
 			<version>${activemq-client_version}</version>
 		</dependency>
 	</dependencies>
+
 	<build>
 		<plugins>
 			<!-- Allows the routes to be run via 'mvn camel:run' -->
@@ -47,4 +57,5 @@
 			</plugin>
 		</plugins>
 	</build>
+
 </project>
