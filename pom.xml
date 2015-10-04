@@ -4,10 +4,10 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.qza</groupId>
-	<artifactId>integration-examples</artifactId>
+	<artifactId>java-integration-examples</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>integration-examples</name>
+	<name>java-integration-examples</name>
 	<description>Java Integration Examples</description>
 
 	<modules>

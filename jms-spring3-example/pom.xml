@@ -5,10 +5,10 @@
 
 	<parent>
 		<groupId>org.qza</groupId>
-		<artifactId>integration-examples</artifactId>
+		<artifactId>java-integration-examples</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-
+	
 	<artifactId>jms-spring3-example</artifactId>
 	<name>jms-spring3-example</name>
 	<description>Sending files from folder over AMQ to receiver</description>
