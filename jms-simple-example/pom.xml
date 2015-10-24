@@ -18,11 +18,22 @@
 	</properties>
 	
 	<dependencies>
+		
+		<!-- Spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.apache.activemq</groupId>
 			<artifactId>activemq-client</artifactId>
 			<version>${activemq-client_version}</version>
 		</dependency>
+		
+		
+		
 	</dependencies>
 	
 	<build>

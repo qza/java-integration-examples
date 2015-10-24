@@ -13,8 +13,8 @@
 	<modules>
 		<module>jms-simple-example</module>
 		<module>jms-spring-example</module>
-		<module>jms-spring3-example</module>
 		<module>jms-camel-spring-example</module>
+		<module>kafka-simple-example</module>
 	</modules>
 
 	<properties>
@@ -29,12 +29,7 @@
 
 	<dependencies>
 
-		<!-- Spring -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-			<version>${org.springframework.version}</version>
-		</dependency>
+		
 
 		<!-- Logging -->
 		<dependency>
@@ -82,7 +77,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
+                <version>3.3</version>
                 <configuration>
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <source>${maven.compiler.source}</source>
